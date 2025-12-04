@@ -8,9 +8,7 @@ class Exercise {
   final int score;
   final DateTime submittedAt;
 
-  Set<Set<bool>> get isPassed => {
-    if (score >= 60) {true} else {false},
-  };
+  bool get isPassed => score >= 60;
 }
 
 List<Exercise> passedOnly(List<Exercise> exercises) {
