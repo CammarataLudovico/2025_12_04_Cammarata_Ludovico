@@ -12,23 +12,22 @@ class Exercise {
 }
 
 List<Exercise> passedOnly(List<Exercise> exercises) {
-  List<Exercise> passedExercises = [];
+  final passed = <Exercise>[];
 
   for (var i = 0; i < exercises.length; i++) {
     if (exercises[i].score >= 60) {
-      passedExercises[i] = exercises[i];
+      passed.add(exercises[i]);
     }
   }
-
-  return passedExercises;
+  return passed;
 }
 
-int averageScore(List<Exercise> exercises) {
+double averageScore(List<Exercise> exercises) {
   int sum = 0;
   for (var i = 0; i < exercises.length; i++) {
     sum = sum + exercises[i].score;
   }
-  int avgScore = (sum / exercises.length) as int;
+  double avgScore = sum / exercises.length;
   return avgScore;
 }
 
